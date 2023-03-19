@@ -1,15 +1,4 @@
-# Expo Router Example
+Job Search App
 
-Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
+Note: The rapid API Key for jsearch API is not to be updated in useFetch.js file which is in the hook folder in the main application do this after cloning the repo 
 
-## 🚀 How to use
-
-```sh
-npx create-react-native-app -t with-router
-```
-
-## 📝 Notes
-
-- [Expo Router: Docs](https://expo.github.io/router)
-- [Expo Router: Repo](https://github.com/expo/router)
-- [Request for Comments](https://github.com/expo/router/discussions/1)
