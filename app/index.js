@@ -1,9 +1,20 @@
-import { useState } from 'react'
-import {View,Text,ScrollView,SafeAreaView,StyleSheet} from 'react-native'
+import { useState,useEffect } from 'react'
+import { View, Text, ScrollView, SafeAreaView, StyleSheet, ActivityIndicator } from 'react-native'
 import { Stack,useRouter } from 'expo-router'
 import {COLORS,icons,images,SIZES}from '../constants'
 import {Nearbyjobs,Popularjobs,ScreenHeaderBtn,Welcome}from '../components'
 const Home=()=>{
+
+//using timeout bcz rapid api allows for one request onoly per 1s
+        const [showComponentNB, setShowComponentNB] = useState(false);
+
+        useEffect(() => {
+            setTimeout(() => {
+                setShowComponentNB(true);
+            }, 6000);
+        }, []);
+
+
     const router=useRouter();
 
 
@@ -24,7 +35,7 @@ style={styles.Scroller}
 
 <Welcome/>
 <Popularjobs/>
-<Nearbyjobs/>
+                {showComponentNB ? (<Nearbyjobs />) : (<ActivityIndicator size="large" color={COLORS.primary} />)}
 </ScrollView>
         </SafeAreaView>
     )
