@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { Text, View, SafeAreaView, ScrollView, ActivityIndicator, RefreshControl } from 'react-native'
+import { Text, View, SafeAreaView, ScrollView, ActivityIndicator, RefreshControl ,Share} from 'react-native'
 import { Stack, useRouter, useSearchParams } from 'expo-router'
 import { Company, JobAbout, JobFooter, JobTabs, ScreenHeaderBtn } from '../../components'
 import useFetch from '../../hook/useFetch'
@@ -55,6 +55,16 @@ const jobDetails = () => {
                     headerRight: () => (<ScreenHeaderBtn
                         iconsUrl={icons.share}
                         dimensions="60%"
+                        handlePress={()=>{
+                            Share.share(
+                                {
+                                    message: `Check out this Job at ${data[0].employer_name} ${data[0].job_google_link}`,
+                                    url: `${data[0].job_google_link}`,
+                                    title: `${data[0].job_title}`,
+                                }
+                            )
+console.log(data[0])
+                        }}
                     />),
                     headerTitle: ""
                 }}

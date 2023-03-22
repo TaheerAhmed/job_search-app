@@ -16,7 +16,7 @@ const Popularjobs = () => {
   const { data, isLoading, error } = useFetch(
     'search', { query: 'React Developer', num_pages: "1", }
   )
-  
+  const [selectedJob, setSelectedJob] = useState();
   const route = useRouter()
 
   return (
@@ -37,8 +37,12 @@ const Popularjobs = () => {
               renderItem={({ item }) => (
                 <PopularJobCard
                   item={item}
-                  // selectedJob={selectedJob}
-                  // handleCardPress={handleCardPress}
+                  selectedJob={selectedJob}
+                  handleCardPress={(item)=>{
+                    route.push(`/job-details/${item.job_id}`)
+                    setSelectedJob(item.job_id)
+                    
+                  }}
                 />
               )}
               keyExtractor={(item) => item.job_id}
