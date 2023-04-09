@@ -1,6 +1,12 @@
 # Job Search App
 
 ## Video Demo
+Check out this video demo to see the app in action (this video has audio, so turn it on):
+
+
+https://user-images.githubusercontent.com/85991537/230784692-a03c0af5-ae06-44f7-af35-649138ed4547.mp4
+
+
 
 ## Overview
 
